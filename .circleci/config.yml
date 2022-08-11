@@ -18,8 +18,11 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run:
-          name: "Add tag2"
+          name: "Add tag"
           command: "git tag 'new' HEAD"
+      - run:
+          name: "Add status"
+          command: " git status"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
