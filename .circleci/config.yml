@@ -22,7 +22,7 @@ jobs:
           command: "git tag 'new' HEAD"
       - run:
           name: "Add tag2"
-          command: "git tag 'v2' HEAD"
+          command: "git tag 'v2'"
       - run:
           name: "Add status"
           command: " git status"
