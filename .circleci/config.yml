@@ -28,7 +28,7 @@ jobs:
             - " git push"
       - run:
           name: "Add status"
-          command: " git push"
+          command: git push --tags
       - run:
           name: "Say hello"
           command: "echo $GIT_COMMIT_DESCf"
