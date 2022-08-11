@@ -27,7 +27,7 @@ jobs:
           command: "git tag 'v2'"
       - run:
           name: "Add status"
-          command: " git status"
+          command: " git push"
       - run:
           name: "Say hello"
           command: "echo $GIT_COMMIT_DESC"
