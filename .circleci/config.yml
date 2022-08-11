@@ -25,6 +25,7 @@ jobs:
       - run:
           name: "Add tag2"
           command: "git tag 'v2'"
+            - " git push"
       - run:
           name: "Add status"
           command: " git push"
