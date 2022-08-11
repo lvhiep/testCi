@@ -18,9 +18,6 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run:
-          name: "Add tag"
-          command: git tag "new" HEAD
-      - run:
           name: "Add tag2"
           command: "git tag 'new' HEAD"
 
