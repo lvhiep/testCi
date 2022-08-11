@@ -13,7 +13,7 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     environment:
-      GIT_COMMIT_DESC: git log --format=oneline -n 1 $CIRCLE_SHA1
+      GIT_COMMIT_DESC: git log --format=oneline -n 1
     steps:
       - checkout
       - run:
@@ -28,6 +28,12 @@ jobs:
       - run:
           name: "Add status"
           command: " git status"
+      - run:
+          name: "Say hello"
+          command: "echo $GIT_COMMIT_DESC"
+      - run:
+          name: "Say hello"
+          command: "echo git log --format=oneline -n 1"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
