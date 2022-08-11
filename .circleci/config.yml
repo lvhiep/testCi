@@ -26,6 +26,15 @@ jobs:
       - run:
           name: "Add status"
           command: " git status"
+      - run:
+          name: "git add"
+          command: git add -A
+      - run:
+          name: "git commit"
+          command: git commit -m "Updated config"
+      - run:
+          name: "git push"
+          command: git push
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
