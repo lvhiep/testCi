@@ -45,26 +45,26 @@ jobs:
       matches:
         pattern: "^feature/*.*$"
         value: << pipeline.git.branch >>
-      steps:
-        - checkout
-        - run:
-            name: "Say hello"
-            command: "echo $GIT_COMMIT_DESC"
-        - run:
-            name: "Add tag"
-            command: "git tag 'new' HEAD"
-        - run:
-            name: "Add tag2"
-            command: "git tag 'v2'"
-        - run:
-            name: "Add status"
-            command: git push --tags
-        - run:
-            name: "Say hello"
-            command: "echo $GIT_COMMIT_DESCf"
-        - run:
-            name: "Say hello"
-            command: "git log --format=oneline -n 1"
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo $GIT_COMMIT_DESC"
+      - run:
+          name: "Add tag"
+          command: "git tag 'new' HEAD"
+      - run:
+          name: "Add tag2"
+          command: "git tag 'v2'"
+      - run:
+          name: "Add status"
+          command: git push --tags
+      - run:
+          name: "Say hello"
+          command: "echo $GIT_COMMIT_DESCf"
+      - run:
+          name: "Say hello"
+          command: "git log --format=oneline -n 1"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
