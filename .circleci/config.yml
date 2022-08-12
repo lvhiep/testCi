@@ -42,8 +42,9 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     when:
-      condition:
-        - equal: [ "origin/circleci-project-setup", << pipeline.git.branch >> ]
+      matches:
+        pattern: "^feature/*.*$"
+        value: << pipeline.git.branch >>
       steps:
         - checkout
         - run:
