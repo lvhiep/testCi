@@ -18,7 +18,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo $GIT_COMMIT_DESC"
+          command: echo "export GIT_COMMIT_DESC='$(git log --format=oneline -n 1)'" >> $BASH_ENV"
       - run:
           name: "Add tag"
           command: "git tag 'new' HEAD"
