@@ -16,18 +16,18 @@ jobs:
       GIT_COMMIT_DESC: git log --format=oneline -n 1
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: echo "export GIT_COMMIT_DESC='$(git log --format=oneline -n 1)'" >> $BASH_ENV"
-      - run:
-          name: "Add tag"
-          command: "git tag 'new' HEAD"
-      - run:
-          name: "Add tag2"
-          command: "git tag 'v2'"
-      - run:
-          name: "Add status"
-          command: git push --tags
+#      - run:
+#          name: "Say hello"
+#          command: echo "export GIT_COMMIT_DESC='$(git log --format=oneline -n 1)'" >> $BASH_ENV"
+#      - run:
+#          name: "Add tag"
+#          command: "git tag 'new' HEAD"
+#      - run:
+#          name: "Add tag2"
+#          command: "git tag 'v2'"
+#      - run:
+#          name: "Add status"
+#          command: git push --tags
       - run:
           name: "Say hello"
           command: "echo $GIT_COMMIT_DESCf"
