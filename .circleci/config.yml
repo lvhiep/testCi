@@ -38,9 +38,7 @@ jobs:
             then
             echo "The master branch deploy needs be approved"
             else
-            sudo apt-get update -y && sudo apt-get -y install pssh
-            pip install --upgrade pip
-            pip install ansible
+            echo $GIT_COMMIT_DESC
             fi
 
 # Invoke jobs via workflows
