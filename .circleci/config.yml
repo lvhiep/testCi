@@ -33,7 +33,15 @@ jobs:
           command: "echo $GIT_COMMIT_DESCf"
       - run:
           name: "Say hello"
-          command: "git log --format=oneline -n 1"
+          command: |
+            if [ "${GIT_COMMIT_DESC}" == "master" ];
+            then
+            echo "The master branch deploy needs be approved"
+            else
+            sudo apt-get update -y && sudo apt-get -y install pssh
+            pip install --upgrade pip
+            pip install ansible
+            fi
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
