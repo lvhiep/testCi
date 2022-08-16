@@ -34,7 +34,7 @@ jobs:
       - run:
           name: "Say hello"
           command: |
-            if [ "${GIT_COMMIT_DESC}" == "master" ];
+            if [ "${GIT_COMMIT_DESC}" == "git log --format=oneline -n 1" ];
             then
             echo "The master branch deploy needs be approved"
             else
